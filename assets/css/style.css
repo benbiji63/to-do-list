@@ -3,31 +3,113 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-body{
+body {
   font-size: 10px;
 }
-
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-.container{
+.container {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg,153677);
+  background: linear-gradient(100deg, #153677, #4e085f);
+  padding: 1em;
+}
+.todo-app {
+  width: 100%;
+  max-width: 33.75rem;
+  background: whitesmoke;
+  margin: 6.25rem auto;
+  padding: 4em 3em 7em;
+  border-radius: 1em;
+}
+
+.todo-app .heading-container {
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ececfc;
+  border-radius: 3em;
+  padding-left: 2em;
+  margin-bottom: 2.5em;
 }
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-h3{
-  font-size: 3.2em;
+
+.todo-app .heading-container h2 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: monospace;
 }
 
+.todo-app .heading-container img {
+  width: 3em;
+  margin-left: 1em;
+}
 
+.row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 1em;
+}
 
+.row button {
+  border: none;
+  outline: none;
+  padding: 1rem 3rem;
+  background: #ff5945;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: start;
+  border-radius: 4em;
+}
+
+ul li{
+  list-style: none;
+  font-size: 1rem;
+  padding: 12px 8px 20px 55px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before{
+  content:'';
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-image: url(../img/unchecked.png) ;
+  background-position: center;
+  top:4px;
+  left: 8px;
+}
+
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+  background-image: url(../img/checked.png) ;
+
+}
